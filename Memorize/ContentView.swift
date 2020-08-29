@@ -21,7 +21,7 @@ struct ContentView: View {
         }
             .padding()
             .foregroundColor(.orange)
-            .font(Font.largeTitle)
+            .font(viewModel.cards.count == 5 ? Font.title : Font.largeTitle)
     }
 }
 
@@ -29,9 +29,10 @@ struct CardView: View {
     var card: MemoryGame<String>.Card
     var body: some View {
         ZStack{
-            if card.isFaceUp{
+            if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
                 RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3)
+                    .aspectRatio(2/3,contentMode: .fit)//task3
                 Text(card.content)
             }else {
                 RoundedRectangle(cornerRadius: 10.0).fill()

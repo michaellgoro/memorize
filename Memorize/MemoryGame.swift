@@ -12,7 +12,8 @@ struct MemoryGame<CardContent> {
     var cards: Array<Card>
     
     func choose(card: Card) {
-        print("card chosen: \(card)")
+        print("card chosen: \(card)")//somechange
+        
     }
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
